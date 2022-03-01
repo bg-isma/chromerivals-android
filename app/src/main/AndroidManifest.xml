@@ -22,7 +22,7 @@
         android:theme="@style/Theme.Chromerivals.NoActionBar">
 
         <activity
-            android:name=".views.SpashActivity"
+            android:name="com.ismita.chromerivals.presenntation.ui.splash.SpashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,11 +31,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.MainNavigationActivity"
+            android:name="com.ismita.chromerivals.presenntation.ui.main.MainNavigationActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".views.ui.pedia.ItemActivity"
+            android:name="com.ismita.chromerivals.presenntation.ui.pedia.ItemActivity"
             android:exported="true" />
 
         <provider

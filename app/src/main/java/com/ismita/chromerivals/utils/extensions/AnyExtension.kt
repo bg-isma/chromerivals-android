@@ -1,13 +1,11 @@
 package com.ismita.chromerivals.utils.extensions
 
 import com.google.gson.Gson
-import com.google.gson.internal.LinkedTreeMap
-import com.ismita.chromerivals.models.event.CurrentEvent
-import com.ismita.chromerivals.models.event.Event
-import com.ismita.chromerivals.models.event.EventDB
-import com.ismita.chromerivals.models.event.UpcomingEvent
-import com.ismita.chromerivals.models.pedia.Item
-import com.ismita.chromerivals.models.pedia.Monster
+import com.ismita.chromerivals.data.model.event.CurrentEvent
+import com.ismita.chromerivals.data.model.event.EventDB
+import com.ismita.chromerivals.data.model.event.UpcomingEvent
+import com.ismita.chromerivals.data.model.pedia.Item
+import com.ismita.chromerivals.data.model.pedia.Monster
 
 object AnyExtension {
 

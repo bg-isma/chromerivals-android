@@ -2,7 +2,7 @@ package com.ismita.chromerivals.utils.extensions
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.ismita.chromerivals.models.event.CurrentEvent
+import com.ismita.chromerivals.data.model.event.CurrentEvent
 import com.ismita.chromerivals.utils.Constants
 import com.ismita.chromerivals.utils.Utils
 import java.time.LocalDateTime

@@ -1,7 +1,7 @@
 package com.ismita.chromerivals.utils.extensions
 
-import com.ismita.chromerivals.models.pedia.PediaElement
-import com.ismita.chromerivals.models.serviceResponse.SearchResult
+import com.ismita.chromerivals.data.model.pedia.PediaElement
+import com.ismita.chromerivals.data.model.responses.SearchResult
 import com.ismita.chromerivals.utils.Utils
 
 object PediaResultExtension {

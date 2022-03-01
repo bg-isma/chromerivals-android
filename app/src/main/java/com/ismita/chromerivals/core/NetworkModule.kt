@@ -1,6 +1,6 @@
 package com.ismita.chromerivals.core
 
-import com.ismita.chromerivals.services.ChromeRivalsApi
+import com.ismita.chromerivals.data.service.api.ChromeRivalsApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

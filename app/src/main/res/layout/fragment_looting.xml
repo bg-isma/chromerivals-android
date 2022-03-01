@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".views.ui.LootingFragment">
+    tools:context=".presenntation.ui.looting.LootingFragment">
 
     <ImageView
         android:id="@+id/item_obtained"

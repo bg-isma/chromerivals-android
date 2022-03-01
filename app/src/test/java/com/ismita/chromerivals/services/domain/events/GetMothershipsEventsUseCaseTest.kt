@@ -1,17 +1,14 @@
 package com.ismita.chromerivals.services.domain.events
 
 import com.google.gson.internal.LinkedTreeMap
-import com.ismita.chromerivals.models.event.EventDB
-import com.ismita.chromerivals.models.event.UpcomingEvent
-import com.ismita.chromerivals.models.serviceResponse.EventsResponse
-import com.ismita.chromerivals.services.database.ChromeRivalsDB
-import com.ismita.chromerivals.services.database.ChromeRivalsEventRoom
-import com.ismita.chromerivals.services.repositories.ChromeRivalsEventRepository
-import com.ismita.chromerivals.services.repositories.ChromeRivalsRepository
+import com.ismita.chromerivals.domain.events.GetMothershipsEventsUseCase
+import com.ismita.chromerivals.data.model.event.UpcomingEvent
+import com.ismita.chromerivals.data.model.responses.EventsResponse
+import com.ismita.chromerivals.data.service.database.repositories.event.ChromeRivalsEventRepository
+import com.ismita.chromerivals.data.service.api.repositories.event.ChromeRivalsRepository
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.runBlocking
 import org.junit.After

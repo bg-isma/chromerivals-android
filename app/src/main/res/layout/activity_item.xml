@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".views.ui.pedia.ItemActivity">
+    tools:context=".presenntation.ui.pedia.ItemActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                     android:background="@color/app_primary"
                     android:backgroundTint="@color/app_primary"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:context=".views.ui.pedia.ItemActivity" >
+                    tools:context=".presenntation.ui.pedia.ItemActivity" >
 
                     <ImageView
                         android:id="@+id/item_back_button"

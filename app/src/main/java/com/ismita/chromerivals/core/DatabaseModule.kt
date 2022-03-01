@@ -2,10 +2,10 @@ package com.ismita.chromerivals.core
 
 import android.content.Context
 import androidx.room.Room
-import com.ismita.chromerivals.services.database.ChromeRivalsDB
-import com.ismita.chromerivals.services.database.ChromeRivalsEventRoom
-import com.ismita.chromerivals.services.database.ChromeRivalsHistoryRoom
-import com.ismita.chromerivals.services.database.ChromeRivalsThemeRoom
+import com.ismita.chromerivals.data.service.database.ChromeRivalsDB
+import com.ismita.chromerivals.data.service.database.ChromeRivalsEventRoom
+import com.ismita.chromerivals.data.service.database.ChromeRivalsHistoryRoom
+import com.ismita.chromerivals.data.service.database.ChromeRivalsThemeRoom
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

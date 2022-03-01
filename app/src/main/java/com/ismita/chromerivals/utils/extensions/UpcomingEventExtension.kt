@@ -1,7 +1,7 @@
 package com.ismita.chromerivals.utils.extensions
 
-import com.ismita.chromerivals.models.event.EventDB
-import com.ismita.chromerivals.models.event.UpcomingEvent
+import com.ismita.chromerivals.data.model.event.EventDB
+import com.ismita.chromerivals.data.model.event.UpcomingEvent
 
 object UpcomingEventExtension {
 
