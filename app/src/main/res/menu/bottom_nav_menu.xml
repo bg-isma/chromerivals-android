@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_ani_logo"
+        android:title="TODO" />
+
+    <!--
+    <item
+        android:id="@+id/navigation_looting"
+        android:icon="@drawable/ic_chromelogo"
+        android:title="TODO" />
+    -->
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_akar_icons_search"
+        android:title="TODO" />
+
+</menu>
