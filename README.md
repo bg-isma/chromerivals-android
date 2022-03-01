@@ -17,6 +17,7 @@ Chromerivals is a private server of the famous online game ACEOnline, the develo
 - Retrofit
 - Testing with MockK
 - Dagger Hilt
+- Room
 
 
 Made with ![Image text](https://img.icons8.com/color/48/000000/like--v3.png) for ismitadev
