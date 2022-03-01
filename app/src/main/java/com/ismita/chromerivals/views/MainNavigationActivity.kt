@@ -35,8 +35,6 @@ class MainNavigationActivity : AppCompatActivity() {
         binding = ActivityMainNavigationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        startService(Intent(this, CurrentEventService::class.java))
-
         callNetworkConnection()
 
         binding.navView.itemIconTintList = null

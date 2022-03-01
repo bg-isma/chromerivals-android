@@ -5,6 +5,16 @@ sealed class Event()
 
 /*
     {
+      "mapsName": "\\yBark City\\y",
+      "maps": [
+        3008 -> neutral
+      ],
+      "startTime": "2022-03-01T18:28:17+01:00",
+      "endTime": "2022-03-01T18:29:17+01:00",
+      "influenceType": 0,
+      "eventType": 27
+    }
+    {
       "mapsName": "\\yAssaulted Hangar\\y",
       "maps": [
         7009 -> neutral

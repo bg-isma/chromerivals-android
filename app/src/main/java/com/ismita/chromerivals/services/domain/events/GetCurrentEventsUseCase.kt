@@ -2,6 +2,7 @@ package com.ismita.chromerivals.services.domain.events
 
 import com.google.gson.internal.LinkedTreeMap
 import com.ismita.chromerivals.models.event.CurrentEvent
+import com.ismita.chromerivals.models.event.UpcomingEvent
 import com.ismita.chromerivals.models.serviceResponse.EventsResponse
 import com.ismita.chromerivals.services.repositories.ChromeRivalsRepository
 import com.ismita.chromerivals.utils.extensions.AnyExtension.toCurrentEvent
@@ -15,7 +16,9 @@ class GetCurrentEventsUseCase @Inject constructor(
 
     private suspend fun getCurrentEvents(): List<CurrentEvent> {
         val currentEventResponse = repository.getCurrentEvents()
-        return anyResultToCurrentEvents(currentEventResponse)
+        return if (currentEventResponse.result == null) {
+            emptyList()
+        } else anyResultToCurrentEvents(currentEventResponse)
     }
 
     private fun anyResultToCurrentEvents(eventsResponse: EventsResponse): List<CurrentEvent> {
