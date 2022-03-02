@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">chromerivals</string>
+    <string name="app_name">Chromerivals</string>
     <string name="title_activity_main_navigation">MainNavigationActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>

@@ -4,6 +4,7 @@ import com.ismita.chromerivals.domain.events.GetOutpostsEventsUseCase
 import com.ismita.chromerivals.data.model.event.UpcomingEvent
 import com.ismita.chromerivals.data.model.responses.EventsResponse
 import com.ismita.chromerivals.data.service.api.repositories.event.CREventRepositoryInterface
+import com.ismita.chromerivals.data.service.database.repositories.event.CREventRoomRepository
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -19,7 +20,7 @@ class GetOutpostsEventsUseCaseTest {
     @RelaxedMockK
     private lateinit var repository: CREventRepositoryInterface
     @RelaxedMockK
-    private lateinit var eventRepository: com.ismita.chromerivals.data.service.database.repositories.event.CREventRoomRepository
+    private lateinit var eventRepository: CREventRoomRepository
 
     lateinit var getOutpostsEventsUseCase : GetOutpostsEventsUseCase
 
