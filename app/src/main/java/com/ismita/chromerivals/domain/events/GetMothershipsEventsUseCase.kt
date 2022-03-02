@@ -3,19 +3,19 @@ package com.ismita.chromerivals.domain.events
 import com.ismita.chromerivals.data.model.event.EventDB
 import com.ismita.chromerivals.data.model.event.UpcomingEvent
 import com.ismita.chromerivals.data.model.responses.EventsResponse
-import com.ismita.chromerivals.data.service.database.repositories.event.ChromeRivalsEventRepository
-import com.ismita.chromerivals.data.service.api.repositories.event.ChromeRivalsRepository
+import com.ismita.chromerivals.data.service.api.repositories.event.CREventRepositoryInterface
+import com.ismita.chromerivals.data.service.database.repositories.event.CREventRoomRepositoryInterface
 import com.ismita.chromerivals.utils.extensions.AnyExtension.toUpcomingEvent
 import javax.inject.Inject
 
 class GetMothershipsEventsUseCase @Inject constructor(
-    private val repository: ChromeRivalsRepository,
-    private val eventsRepository: ChromeRivalsEventRepository,
+    private val eventRepository: CREventRepositoryInterface,
+    private val roomEventRepository: CREventRoomRepositoryInterface,
 ) {
     suspend operator fun invoke(): List<UpcomingEvent> = getMothershipsEvent()
 
     private suspend fun getMothershipsEvent(): List<UpcomingEvent> {
-        val mothershipsEventResponse = repository.getMothershipsEvent()
+        val mothershipsEventResponse = eventRepository.getMothershipsEvent()
         return if (mothershipsEventResponse.result != null) {
             deleteDatabaseMothershipsIfAny()
             insertNewDatabaseMotherships(mothershipsEventResponse)
@@ -38,15 +38,15 @@ class GetMothershipsEventsUseCase @Inject constructor(
     }
 
     private suspend fun getFromDataBaseIfResponseEmpty():List<UpcomingEvent> {
-        return eventsRepository.getAllMotherships()
+        return roomEventRepository.getAllMotherships()
     }
 
     private suspend fun deleteDatabaseMothershipsIfAny() {
-        eventsRepository.deleteAllMotherships()
+        roomEventRepository.deleteAllMotherships()
     }
 
     private suspend fun insertNewDatabaseMotherships(eventsResponse: EventsResponse) {
-        eventsRepository.insertEvents(anyResultToEventDB(eventsResponse))
+        roomEventRepository.insertEvents(anyResultToEventDB(eventsResponse))
     }
 
 }

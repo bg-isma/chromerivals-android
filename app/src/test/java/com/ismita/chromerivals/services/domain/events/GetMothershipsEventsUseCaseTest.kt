@@ -4,8 +4,7 @@ import com.google.gson.internal.LinkedTreeMap
 import com.ismita.chromerivals.domain.events.GetMothershipsEventsUseCase
 import com.ismita.chromerivals.data.model.event.UpcomingEvent
 import com.ismita.chromerivals.data.model.responses.EventsResponse
-import com.ismita.chromerivals.data.service.database.repositories.event.ChromeRivalsEventRepository
-import com.ismita.chromerivals.data.service.api.repositories.event.ChromeRivalsRepository
+import com.ismita.chromerivals.data.service.api.repositories.event.CREventRepositoryInterface
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
@@ -18,9 +17,9 @@ import org.junit.Test
 class GetMothershipsEventsUseCaseTest {
 
     @RelaxedMockK
-    private lateinit var repository: ChromeRivalsRepository
+    private lateinit var repository: CREventRepositoryInterface
     @RelaxedMockK
-    private lateinit var eventRepository: ChromeRivalsEventRepository
+    private lateinit var eventRepository: com.ismita.chromerivals.data.service.database.repositories.event.CREventRoomRepository
 
     lateinit var getMothershipsEventsUseCase : GetMothershipsEventsUseCase
 

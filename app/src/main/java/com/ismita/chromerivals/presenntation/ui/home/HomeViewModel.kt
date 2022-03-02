@@ -10,7 +10,7 @@ import com.ismita.chromerivals.data.model.pedia.typesEnum.CategoryType
 import com.ismita.chromerivals.domain.events.GetCurrentEventsUseCase
 import com.ismita.chromerivals.domain.events.GetMothershipsEventsUseCase
 import com.ismita.chromerivals.domain.events.GetOutpostsEventsUseCase
-import com.ismita.chromerivals.data.service.database.repositories.theme.ChromeRivalsThemeRepository
+import com.ismita.chromerivals.data.service.database.repositories.theme.CRThemeRepository
 import com.ismita.chromerivals.utils.Utils.concatenate
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -21,7 +21,7 @@ class HomeViewModel @Inject constructor(
     private val getOutpostsEventsUseCase : GetOutpostsEventsUseCase,
     private val getMothershipsEventsUseCase: GetMothershipsEventsUseCase,
     private val getCurrentEventsUseCase: GetCurrentEventsUseCase,
-    private val chromeRivalsThemeRepository: ChromeRivalsThemeRepository
+    private val CRThemeRepository: CRThemeRepository
 ): ViewModel() {
 
     val upComingEvents = MutableLiveData<List<Event>>()
@@ -31,13 +31,13 @@ class HomeViewModel @Inject constructor(
 
     fun getTheme() {
         viewModelScope.launch {
-            theme.postValue(chromeRivalsThemeRepository.getTheme())
+            theme.postValue(CRThemeRepository.getTheme())
         }
     }
 
     fun updateTheme(theme: ThemeDB) {
         viewModelScope.launch {
-            chromeRivalsThemeRepository.updateTheme(theme)
+            CRThemeRepository.updateTheme(theme)
         }
     }
 
@@ -53,7 +53,7 @@ class HomeViewModel @Inject constructor(
 
     fun insertTheme(theme: ThemeDB) {
         viewModelScope.launch {
-            chromeRivalsThemeRepository.insertTheme(theme)
+            CRThemeRepository.insertTheme(theme)
         }
     }
 

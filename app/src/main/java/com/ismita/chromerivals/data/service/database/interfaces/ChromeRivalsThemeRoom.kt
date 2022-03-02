@@ -1,4 +1,4 @@
-package com.ismita.chromerivals.data.service.database
+package com.ismita.chromerivals.data.service.database.interfaces
 
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -11,7 +11,7 @@ import com.ismita.chromerivals.data.model.theme.ThemeDB;
 interface ChromeRivalsThemeRoom {
 
     @Query("SELECT * from theme_table LIMIT 1")
-    fun getTheme(): ThemeDB?
+    fun getTheme(): ThemeDB
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(item: ThemeDB): Long

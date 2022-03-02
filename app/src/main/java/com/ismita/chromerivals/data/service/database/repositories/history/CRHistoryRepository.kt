@@ -1,34 +1,34 @@
 package com.ismita.chromerivals.data.service.database.repositories.history
 
 import com.ismita.chromerivals.data.model.pedia.HistoryElementDB
-import com.ismita.chromerivals.data.service.database.ChromeRivalsHistoryRoom
+import com.ismita.chromerivals.data.service.database.interfaces.ChromeRivalsHistoryRoom
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class HistoryElementsRepository @Inject constructor(
+class CRHistoryRepository @Inject constructor(
     private val historyRoom: ChromeRivalsHistoryRoom
-) {
+): CRHistoryRepositoryInterface {
 
-    suspend fun getAllHistoryElements(): List<HistoryElementDB> {
+    override suspend fun getAllHistoryElements(): List<HistoryElementDB> {
         return withContext(Dispatchers.IO) {
             historyRoom.getAll()
         }
     }
 
-    suspend fun deleteHistoryElement(item: HistoryElementDB) {
+    override suspend fun deleteHistoryElement(item: HistoryElementDB) {
         withContext(Dispatchers.IO) {
             historyRoom.delete(item)
         }
     }
 
-    suspend fun deleteAll() {
+    override suspend fun deleteAll() {
         withContext(Dispatchers.IO) {
             historyRoom.deleteAll()
         }
     }
 
-    suspend fun insertHistoryElement(item: HistoryElementDB) {
+    override suspend fun insertHistoryElement(item: HistoryElementDB) {
         withContext(Dispatchers.IO) {
             historyRoom.insert(item = item)
         }

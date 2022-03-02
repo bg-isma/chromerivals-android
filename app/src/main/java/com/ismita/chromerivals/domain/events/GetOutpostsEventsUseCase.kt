@@ -3,20 +3,20 @@ package com.ismita.chromerivals.domain.events
 import com.ismita.chromerivals.data.model.event.EventDB
 import com.ismita.chromerivals.data.model.event.UpcomingEvent
 import com.ismita.chromerivals.data.model.responses.EventsResponse
-import com.ismita.chromerivals.data.service.database.repositories.event.ChromeRivalsEventRepository
-import com.ismita.chromerivals.data.service.api.repositories.event.ChromeRivalsRepository
+import com.ismita.chromerivals.data.service.api.repositories.event.CREventRepositoryInterface
+import com.ismita.chromerivals.data.service.database.repositories.event.CREventRoomRepositoryInterface
 import com.ismita.chromerivals.utils.extensions.AnyExtension.toEventDBList
 import com.ismita.chromerivals.utils.extensions.AnyExtension.toUpcomingEventList
 import javax.inject.Inject
 
 class GetOutpostsEventsUseCase @Inject constructor(
-    private val repository: ChromeRivalsRepository,
-    private val eventsRepository: ChromeRivalsEventRepository,
+    private val eventRepository: CREventRepositoryInterface,
+    private val roomEventRepository: CREventRoomRepositoryInterface,
 ) {
     suspend operator fun invoke(): List<UpcomingEvent> = getOutpostsEvents()
 
     private suspend fun getOutpostsEvents(): List<UpcomingEvent> {
-        val outpostsResponse = repository.getOutpostsEvents()
+        val outpostsResponse = eventRepository.getOutpostsEvents()
         return if (outpostsResponse.result != null) {
             deleteDatabaseOutpostsIfAny()
             insertNewDatabaseOutposts(outpostsResponse)
@@ -25,7 +25,7 @@ class GetOutpostsEventsUseCase @Inject constructor(
     }
 
     private suspend fun getFromDataBaseIfResponseEmpty():List<UpcomingEvent> {
-        return eventsRepository.getAllOutposts()
+        return roomEventRepository.getAllOutposts()
     }
 
     private fun anyResultToUpcomingEvent(eventsResponse: EventsResponse): List<UpcomingEvent> {
@@ -37,11 +37,11 @@ class GetOutpostsEventsUseCase @Inject constructor(
     }
 
     private suspend fun deleteDatabaseOutpostsIfAny() {
-        eventsRepository.deleteAllOutposts()
+        roomEventRepository.deleteAllOutposts()
     }
 
     private suspend fun insertNewDatabaseOutposts(eventsResponse: EventsResponse) {
-        eventsRepository.insertEvents(anyResultToEventDB(eventsResponse))
+        roomEventRepository.insertEvents(anyResultToEventDB(eventsResponse))
     }
 
 }

@@ -1,4 +1,4 @@
-package com.ismita.chromerivals.data.service.database
+package com.ismita.chromerivals.data.service.database.interfaces
 
 import androidx.room.Dao
 import androidx.room.Insert

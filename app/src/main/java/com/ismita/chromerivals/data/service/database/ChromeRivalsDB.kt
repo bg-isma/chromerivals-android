@@ -7,6 +7,9 @@ import com.ismita.chromerivals.data.model.event.EventDB
 import com.ismita.chromerivals.data.model.theme.ThemeDB
 import com.ismita.chromerivals.data.model.pedia.HistoryElementDB
 import com.ismita.chromerivals.data.service.database.converters.Converters
+import com.ismita.chromerivals.data.service.database.interfaces.ChromeRivalsEventRoom
+import com.ismita.chromerivals.data.service.database.interfaces.ChromeRivalsHistoryRoom
+import com.ismita.chromerivals.data.service.database.interfaces.ChromeRivalsThemeRoom
 
 @Database(entities = [HistoryElementDB::class, ThemeDB::class, EventDB::class], version = 1)
 @TypeConverters(Converters::class)
