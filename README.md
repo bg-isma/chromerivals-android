@@ -19,5 +19,6 @@ Chromerivals is a private server of the famous online game ACEOnline, the develo
 - Dagger Hilt
 - Room
 
+see too the app for: [IOS](https://github.com/bg-isma/chromerivals-ios)
 
 Made with ![Image text](https://img.icons8.com/color/48/000000/like--v3.png) for ismitadev
